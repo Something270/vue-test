@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="app" @submit="checkForm" action="/something" method="post" novalidate="true">
+  
+        <p v-if="errors.length">
+          <b>Please correct the following error(s):</b>
+          <ul>
+            <li v-for="error in errors">{{ error }}</li>
+          </ul>
+        </p>
+        
+        <p>
+          <label for="name">Name<label>
+          <input type="text" name="name" id="name" v-model="name">
+        </p>
+      
+        <p>
+          <label for="email">Email<label>
+          <input type="email" name="email" id="email" v-model="email">
+        </p>
+      
+
+      
+        <p>
+          <input type="submit" value="Submit">  
+        </p>
+      
+      </form>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+      <script src="./index.js"></script>
+</body>
+</html>
